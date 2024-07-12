@@ -1,5 +1,5 @@
 # Codedex Summer Hackaton '24 
-[Website](https://codedex-invitation-5zdhrres7-kat-limquecos-projects.vercel.app/))
+[Website](https://codedex-invitation-5zdhrres7-kat-limquecos-projects.vercel.app/)
 
 ## Preview 
 ![Thumbnail 1](media/preview-1.png)
