@@ -1,113 +1,134 @@
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+import Envelope from '../components/Envelope';
+
+
+const GoogleMapComponent = dynamic(() => import('../components/GoogleMapComponent'), { ssr: false });
+
+const DraggableItem = dynamic(() => import('../components/DraggableItem'), { ssr: false });
+
+const mapContainerStyle = {
+  width: '100%',
+  height: '100%',
+};
+
+const center = {
+  lat: 40.6828, // Approximate coordinates for 2nd Pl & Court St, Brooklyn
+  lng: -73.9957,
+};
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-white text-black p-2">
+      </a>
+      <main id="main-content" className="flex flex-col w-full">
+        <section className="h-screen w-full flex items-center justify-center bg-[#d8d5d5]">
+          <Envelope>
+          <div className="relative" style={{ width: '70%', height: '70%', marginLeft: '15%' }}>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src="/invitation.png"
+              alt="Invitation"
+              layout="fill"
+              objectFit="contain"
             />
-          </a>
-        </div>
-      </div>
+          </div>
+          </Envelope>
+        </section>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+        <section className="h-screen w-full bg-[#d8d5d5] relative overflow-hidden">
+  <div className="w-full h-24 bg-[#BB5C68] absolute top-0 left-0 right-0 z-10 flex items-center justify-center">
+    <Image
+      src="/DETAILS.png"
+      alt="Details"
+      width={300}
+      height={300}
+      objectFit="contain"
+      className="max-h-full"
+    />
+  </div>
+  <div className="absolute inset-0 pt-24">
+    <div className="relative w-full h-full p-4 sm:p-8 md:p-16 lg:p-24 overflow-hidden">
+      <DraggableItem 
+        initialPosition={{ x: 20, y: 100 }} 
+        polaroidSrc="/polaroid-1.png"
+        contentSrc="/content-1.png"
+        size={350}
+      />
+      <DraggableItem 
+        initialPosition={{ x: 300, y: 150 }} 
+        polaroidSrc="/polaroid-2.png"
+        contentSrc="/content-2.png"
+        size={350}
+      />
+      <DraggableItem 
+        initialPosition={{ x: 580, y: 200 }} 
+        polaroidSrc="/polaroid-3.png"
+        contentSrc="/content-3.png"
+        size={350}
+      />
+      <DraggableItem
+        initialPosition={{ x: 450, y: 50 }}
+        imageSrc="/star.png"
+        size={100}
+      />
+      <DraggableItem
+        initialPosition={{ x: 100, y: 30 }}
+        imageSrc="/groovy.png"
+        size={200}
+      />
+      <DraggableItem
+        initialPosition={{ x: 600, y: 10 }}
+        imageSrc="/logo.png"
+        size={200}
+      />
+    </div>
+  </div>
+</section>
+        <section className="h-screen w-full bg-[#BB5C68] relative p-2 sm:p-4 md:p-6 lg:p-8">
+          <div className="relative w-full h-full flex">
+            <div className="w-2/3 flex">
+              <div className="w-1/2 relative">
+                <div className="absolute top-0 left-0">
+                  <Image
+                    src="/sticker-1.png"
+                    alt="Sticker 1"
+                    width={350}
+                    height={350}
+                    objectFit="contain"
+                  />
+                </div>
+                <div className="text-center relative text-[#FFDBA6] left-[45%] top-[30%]">
+            <p className="font-dm-mono text-[20px] mb-4">ONE DAY ONLY!</p>
+            <h1 className="font-shrikhand text-[48px] leading-tight mb-2">Carroll Gardens</h1>
+            <p className="font-shrikhand text-[48px] leading-tight mb-2">Aug 7th</p>
+            <p className="font-shrikhand text-[48px] leading-tight mb-4">10am - 6pm</p>
+            <p className="font-dm-mono text-[20px] mt-4">
+              DISCOVER HIDDEN TREASURES<br />
+              AT OUR STOOP SALE SPECTACULAR!
+            </p>
+          </div>
+              </div>
+              <div className="w-2/3 relative left-[15%]">
+                <Image
+                  src="/clothes.png"
+                  alt="Clothes"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+            <div className="w-2/5 bg-gray-200 relative">
+              <GoogleMapComponent />
+              <div className="absolute bottom-2 left-2 bg-white p-2 rounded shadow text-sm">
+                <p className="font-bold">2nd Pl & Court St</p>
+                <p>Brooklyn, NY 11231</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

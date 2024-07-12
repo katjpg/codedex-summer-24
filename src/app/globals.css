@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,18 +19,36 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+#__next {
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.react-draggable {
+  user-select: none;
+}
+
+.react-draggable-dragging {
+  z-index: 1000;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

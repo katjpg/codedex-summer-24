@@ -1,0 +1,107 @@
+.container {
+  height: 600px;
+  width: 600px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.wrapper {
+  height: 400px;
+  width: 600px;
+  background-color: #bc5d67;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+  cursor: pointer;
+  overflow: visible;
+  border-radius: 0 0 20px 20px;
+}
+
+.lid {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-right: 300px solid transparent;
+  border-bottom: 200px solid transparent;
+  border-left: 300px solid transparent;
+  transform-origin: top;
+  transition: transform 0.5s;
+}
+
+.lid.one {
+  border-top: 200px solid #EEF4F9;
+  z-index: 3;
+}
+
+.envelope {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  top: 0;
+  left: 0;
+  border-top: 200px solid transparent;
+  border-right: 300px solid #DCE9EF;
+  border-bottom: 200px solid #EEF4F9;
+  border-left: 300px solid #DCE9EF;
+  z-index: 4;
+}
+
+.letter {
+  position: absolute;
+  width: 90%;
+  height: 110%;
+  background-color: white;
+  border-radius: 15px;
+  transform-origin: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.scrollText {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  font-family: 'DM Mono', monospace;
+  font-style: normal;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 400;
+  color: #3B4049;
+}
+
+.dearImage {
+  position: absolute;
+  left: 50%;
+  bottom: 75%; 
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.dearText {
+  position: absolute;
+  top: 100%;
+  left: 35%;
+  transform: translateX(-50%);
+  font-family: 'Shrikhand', cursive;
+  font-size: 28px;
+  color: #3B4049;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sticker {
+  position: absolute;
+  top: 43%;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+  cursor: pointer;
+}
+
+.sticker:hover {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+}
