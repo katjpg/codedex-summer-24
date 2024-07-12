@@ -2,9 +2,9 @@
 [Website](https://codedex-invitation-hkyjg331d-kat-limquecos-projects.vercel.app/)
 
 ## Preview 
-![Thumbnail 1](media/thumbnail-1.png)
-![Thumbnail 2](media/thumbnail-2.png)
-![Thumbnail 3](media/thumbnail-3.png)
+![Thumbnail 1](media/preview-1.png)
+![Thumbnail 2](media/preview-2.png)
+![Thumbnail 3](media/preview-3.png)
 
 
 **Tech Stack**: Next.js, React, Typescript, TailwindCSS
