@@ -11,7 +11,7 @@
 
 **Project tidbit**: 
 - This is an interactive website submission for Track 2 of [Codedex’s Summer ’24 Hackathon](https://www.codedex.io/hackathon).
-- The main features is are an animated envelope that opens to reveal content on click, draggable elements that can be freely moved around, and an embedded Google Map via [Maps Javascript API](https://developers.google.com/maps/documentation/javascript/overview)
+- The main features are an animated envelope that opens to reveal content on click, draggable elements that can be freely moved around, and an embedded Google Map via [Maps Javascript API](https://developers.google.com/maps/documentation/javascript/overview)
 
 **Future Considerations**: 
 - Making interface more user-friendly and adaptable across multiple screen views (currently works best on full web view).
